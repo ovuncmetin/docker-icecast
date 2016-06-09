@@ -11,6 +11,7 @@ RUN apt-get -qq -y update && \
 RUN easy_install supervisor && \
     easy_install supervisor-stdout
 
+RUN mv /icecast2 /etc/icecast2 
 CMD ["/start.sh"]
 EXPOSE 8000
 VOLUME ["/config", "/var/log/icecast2", "/etc/icecast2"]
